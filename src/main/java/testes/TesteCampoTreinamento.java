@@ -3,6 +3,7 @@ package testes;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
@@ -102,5 +103,15 @@ public class TesteCampoTreinamento {
 		
 				
 	}
-
+	@Test
+	@Ignore
+	public void deveInteragirComLinks() {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().setPosition(new Point(1350, 10));
+		driver.manage().window().maximize();
+		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
+		driver.findElement(By.linkText("Voltar")).click();
+		Assert.fail();
+		
+	}
 }
