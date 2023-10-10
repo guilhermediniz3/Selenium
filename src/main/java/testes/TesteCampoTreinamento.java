@@ -111,7 +111,23 @@ public class TesteCampoTreinamento {
 		driver.manage().window().maximize();
 		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
 		driver.findElement(By.linkText("Voltar")).click();
-		Assert.fail();
+	    Assert.assertEquals("Voltou!",driver.findElement(By.id("resultado")).getText());
+	    driver.quit();
+	}
+	
+	@Test
+
+	public void deveBuscarTextosNaPagina() {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().setPosition(new Point(1350, 10));
+		driver.manage().window().maximize();
+		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
+		driver.findElement(By.tagName("h3"));
+		//mostrar no console
+		//System.out.println(driver.findElement(By.tagName("html")).getText());
+		// Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("span"));
+	       Assert.assertEquals("Cuidado onde clica, muitas armadilhas...",driver.findElement(By.className("facilAchar")).getText());
+	       driver.quit();; 
 		
 	}
 }
