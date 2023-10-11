@@ -50,5 +50,24 @@ public class TesteAlert {
 		driver.quit();
 
 	}
+	@Test
+
+	public void deveInteragirComPrompt() {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().setPosition(new Point(1350, 10));
+		driver.manage().window().maximize();
+		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
+		driver.findElement(By.id("prompt")).click();
+		Alert alerta = driver.switchTo().alert();
+		Assert.assertEquals("Digite um numero", alerta.getText());
+		alerta.sendKeys("12");
+		alerta.accept();
+		Assert.assertEquals("Era 12?", alerta.getText());
+		alerta.accept();
+		Assert.assertEquals(":D", alerta.getText());
+		alerta.accept();
+
+	}
+	
 
 }
