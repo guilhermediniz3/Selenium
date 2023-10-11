@@ -95,14 +95,14 @@ public class TesteCampoTreinamento {
 		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
 		WebElement botao = driver.findElement(By.id("buttonSimple"));
 		botao.click();
-		Assert.assertEquals("Obrigado!",botao.getAttribute("value"));
+		Assert.assertEquals("Obrigado!", botao.getAttribute("value"));
 		driver.quit();
 		// minha implementação
-		//String resultado = botao.getAttribute("value");
-		//Assert.assertEquals(resultado, botao.getAttribute("value"));
-		
-				
+		// String resultado = botao.getAttribute("value");
+		// Assert.assertEquals(resultado, botao.getAttribute("value"));
+
 	}
+
 	@Test
 	@Ignore
 	public void deveInteragirComLinks() {
@@ -111,10 +111,10 @@ public class TesteCampoTreinamento {
 		driver.manage().window().maximize();
 		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
 		driver.findElement(By.linkText("Voltar")).click();
-	    Assert.assertEquals("Voltou!",driver.findElement(By.id("resultado")).getText());
-	    driver.quit();
+		Assert.assertEquals("Voltou!", driver.findElement(By.id("resultado")).getText());
+		driver.quit();
 	}
-	
+
 	@Test
 
 	public void deveBuscarTextosNaPagina() {
@@ -123,11 +123,14 @@ public class TesteCampoTreinamento {
 		driver.manage().window().maximize();
 		driver.get("file:///C:/selenium/Curso/formulario/componentes.html");
 		driver.findElement(By.tagName("h3"));
-		//mostrar no console
-		//System.out.println(driver.findElement(By.tagName("html")).getText());
+		// mostrar no console
+		// System.out.println(driver.findElement(By.tagName("html")).getText());
 		// Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("span"));
-	       Assert.assertEquals("Cuidado onde clica, muitas armadilhas...",driver.findElement(By.className("facilAchar")).getText());
-	       driver.quit();; 
-		
+		Assert.assertEquals("Cuidado onde clica, muitas armadilhas...",
+		driver.findElement(By.className("facilAchar")).getText());
+		driver.quit();
+
 	}
+	
+
 }
